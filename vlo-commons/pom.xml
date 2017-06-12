@@ -38,6 +38,24 @@
         
         <plugins>
             <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>read-project-properties</goal>
+                        </goals>
+                        <configuration>
+                            <files>
+                                <file>${config.propertiesfile}</file>
+                            </files>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>3.0.0</version>
@@ -74,12 +92,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <vloconfig.solrUrl>http://localhost:8080/vlo-solr/core0/</vloconfig.solrUrl>
-                <vloconfig.dataRootsFile>dataroots-local.xml</vloconfig.dataRootsFile>
-                <!-- bundled mapping files (package resources, from the VLO-mapping project) -->
-                <vloconfig.mappingFilesLocation>/uniform-maps/</vloconfig.mappingFilesLocation> 
-                <!-- empty location uses bundled default facet concepts file (from the VLO-mapping project) -->
-                <vloconfig.facetConceptsFileLocation></vloconfig.facetConceptsFileLocation>
+                <config.propertiesfile>${project.basedir}/src/config/config-defaults-local_dev.properties</config.propertiesfile>
             </properties>
         </profile>
         
