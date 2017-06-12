@@ -101,10 +101,7 @@
             <id>dev-vm</id>
             <properties>
                 <maven.test.skip>true</maven.test.skip>
-                <vloconfig.solrUrl>http://localhost:8080/solr/core0/</vloconfig.solrUrl>
-                <vloconfig.dataRootsFile>file:/srv/webapps/vlo/dataroots-testvm.xml</vloconfig.dataRootsFile>
-                <vloconfig.mappingFilesLocation>file:/srv/VLO-mapping/uniform-maps/</vloconfig.mappingFilesLocation>
-                <vloconfig.facetConceptsFileLocation>file:/srv/VLO-mapping/mapping/facetConcepts.xml</vloconfig.facetConceptsFileLocation>
+                <config.propertiesfile>${project.basedir}/src/config/config-defaults-dev_vm.properties</config.propertiesfile>
             </properties>
         </profile>
         
@@ -112,13 +109,7 @@
             <!-- For deployment to vlo.clarin.eu -->
             <id>production</id>
             <properties>
-                <vloconfig.deleteAllFirst>false</vloconfig.deleteAllFirst>
-                <vloconfig.maxDaysInSolr>7</vloconfig.maxDaysInSolr>
-                <vloconfig.solrUrl>http://localhost:8080/solr/core0/</vloconfig.solrUrl>
-                <vloconfig.homeUrl>http://vlo.clarin.eu</vloconfig.homeUrl>
-                <vloconfig.dataRootsFile>dataroots-production.xml</vloconfig.dataRootsFile>
-                <vloconfig.mappingFilesLocation>file:/srv/VLO-mapping/uniform-maps/</vloconfig.mappingFilesLocation>
-                <vloconfig.facetConceptsFileLocation>file:/srv/VLO-mapping/mapping/facetConcepts.xml</vloconfig.facetConceptsFileLocation>
+                <config.propertiesfile>${project.basedir}/src/config/config-defaults-production.properties</config.propertiesfile>
             </properties>
         </profile>
         
@@ -126,13 +117,7 @@
             <!--  For deployment to beta-vlo.clarin.eu -->
             <id>beta</id>
             <properties>
-                <vloconfig.deleteAllFirst>false</vloconfig.deleteAllFirst>
-                <vloconfig.maxDaysInSolr>7</vloconfig.maxDaysInSolr>
-                <vloconfig.solrUrl>http://localhost:8080/solr/core0/</vloconfig.solrUrl>
-                <vloconfig.homeUrl>http://beta-vlo.clarin.eu</vloconfig.homeUrl>
-                <vloconfig.dataRootsFile>dataroots-beta.xml</vloconfig.dataRootsFile>
-                <vloconfig.mappingFilesLocation>file:/srv/VLO-mapping/uniform-maps/</vloconfig.mappingFilesLocation>
-                <vloconfig.facetConceptsFileLocation>file:/srv/VLO-mapping/mapping/facetConcepts.xml</vloconfig.facetConceptsFileLocation>
+                <config.propertiesfile>${project.basedir}/src/config/config-defaults-beta.properties</config.propertiesfile>
             </properties>
         </profile>
     </profiles>
